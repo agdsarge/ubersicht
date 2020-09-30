@@ -1,0 +1,1 @@
+wget -qO- https://api.weather.gov/gridpoints/AKQ/72,67/forecast | grep -E 'name|shortForecast' | head -n6 | sed 's/"name": //' | sed 's/"shortForecast"//' | sed 's/^[ \t]*//' | tr '\n' ' ' | sed 's/, :/:/g' | sed 's/"//g'
