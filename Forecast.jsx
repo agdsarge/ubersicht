@@ -51,31 +51,6 @@ const render = ({output}) => {
     } else {
         return <div></div>
     }
-
-    // let [now, next, later] = output.split(',').map(f => f.split(':'))
-    // if (next[0]) {
-    //     return (
-            <div>
-                <div className={row}>
-                    <div className={column} >
-                        <div> {now[0]} </div>
-                        <div> {now[1]} </div>
-                    </div>
-                    <div className={column} >
-                        <div> {next[0]} </div>
-                        <div> {next[1]} </div>
-                    </div>
-                    <div className={column} >
-                        <div> {later[0]} </div>
-                        <div> {later[1]} </div>
-                    </div>
-                </div>
-            </div>
-    //     )
-    // } else {
-    //     return null
-    // }
-    
 }
 
 export {command, refreshFrequency, className, render}
