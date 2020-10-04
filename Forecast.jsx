@@ -9,7 +9,7 @@ const className = {
     ...fontInfo,
     bottom: '1%',
     right: '20%',
-    textAlign: 'right',
+    textAlign: 'left',
     width: '620px'
 }
 
@@ -21,33 +21,61 @@ const column = css({
 })
 
 const row = css({
-    content: '',
     display: 'table',
     clear: 'both',
 })
 
 const render = ({output}) => {
-    output = output.trim()
-    output = output.slice(0, output.length - 1)
-    let [now, next, later] = output.split(',').map(f => f.split(':'))
-    return (
-        <div>
-            <div className={row}>
-                <div className={column} >
-                    <div> {now[0]} </div>
-                    <div> {now[1]} </div>
-                </div>
-                <div className={column} >
-                    <div> {next[0]} </div>
-                    <div> {next[1]} </div>
-                </div>
-                <div className={column} >
-                    <div> {later[0]} </div>
-                    <div> {later[1]} </div>
+    console.log(output)
+    let [now, w0, next, w1, later, w2] = output.split(',')
+    if (!!output) {
+        return (
+            <div>
+                <div className={row}>
+                    <div className={column} >
+                        <div> {now} </div>
+                        <div> {w0} </div>
+                    </div>
+                    <div className={column} >
+                        <div> {next} </div>
+                        <div> {w1} </div>
+                    </div>
+                    <div className={column} >
+                        <div> {later} </div>
+                        <div> {w2} </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+            
+        )
+    } else {
+        return <div></div>
+    }
+
+    // let [now, next, later] = output.split(',').map(f => f.split(':'))
+    // if (next[0]) {
+    //     return (
+            <div>
+                <div className={row}>
+                    <div className={column} >
+                        <div> {now[0]} </div>
+                        <div> {now[1]} </div>
+                    </div>
+                    <div className={column} >
+                        <div> {next[0]} </div>
+                        <div> {next[1]} </div>
+                    </div>
+                    <div className={column} >
+                        <div> {later[0]} </div>
+                        <div> {later[1]} </div>
+                    </div>
+                </div>
+            </div>
+    //     )
+    // } else {
+    //     return null
+    // }
+    
 }
 
 export {command, refreshFrequency, className, render}

@@ -5,7 +5,7 @@ const refreshFrequency = 12000;
 const fontInfo = {
     color: '#F0F0F0',
     font: '14px Futura',
-    "-webkit-font-smoothing": 'antialiased'
+    "webkitFontSmoothing": 'antialiased'
 }
 
 const className = {

@@ -1,10 +1,8 @@
 import {fontInfo} from './Date.jsx'
-const kaffeine = "test $(pgrep KeepingYouAwake) && if [[ $(pgrep caffeinate) ]]; then echo 'K+'; else echo 'K'; fi;"
-const fluxStatus = 'test $(pgrep Flux) && echo Flux'
 
-const command = kaffeine + fluxStatus;
+const command = './tray.sh' 
 
-const refreshFrequency = 2000;
+const refreshFrequency = 10000;
 
 const className = {
     ...fontInfo,

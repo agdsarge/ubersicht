@@ -1,6 +1,6 @@
 import {fontInfo} from './Date.jsx'
 
-const command = "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print $0}'";
+const command = "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep ' SSID'"
 
 const refreshFrequency = 60000;
 
